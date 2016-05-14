@@ -6,6 +6,7 @@ RUN apt-get -qy --no-install-recommends install tmux vim ipython openssh-server 
 
 RUN mkdir /var/run/sshd
 RUN chmod 0755 /var/run/sshd
+RUN sed -i '/PasswordAuthentication/d' /etc/ssh/sshd_config && echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 
 RUN /usr/sbin/useradd --create-home --shell /bin/bash --uid 1000 pairbox
 
