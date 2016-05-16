@@ -1,0 +1,16 @@
+---
+- hosts: docker-host
+  tasks:
+    - apt: upgrade=dist update_cache=yes
+    - with_items:
+        - git
+        - docker.io
+        - fail2ban
+      apt: name={{ item }} state=present install_recommends=no
+    - with_items:
+        - { key: "PasswordAuthentication", value: "no" }
+        - { key: "ChallengeResponseAuthentication", value: "no" }
+        - { key: "PermitRootLogin", value: "prohibit-password" }
+        - { key: "Port", value: "2200" }
+      lineinfile: dest=/etc/ssh/sshd_config regexp="^{{ item.key }}{{' '}}" line="{{ item.key }} {{ item.value }}" state=present
+    - service: name=ssh state=restarted
