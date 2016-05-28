@@ -1,8 +1,18 @@
-FROM ubuntu:latest
+FROM debian:unstable
+
+RUN echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/50pairbox
 
 RUN apt-get update
-RUN apt-get -qy --no-install-recommends install tmux vim ipython openssh-server \
-        jq curl git nodejs npm sudo openssh-client ghc emacs-nox
+RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
+        jq curl git sudo openssh-client ghc emacs-nox less moreutils locales aptitude \
+        apt-transport-https build-essential htop \
+        xfonts-base vnc4server i3 chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu
+
+RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+RUN echo 'deb https://deb.nodesource.com/node_6.x sid main' > /etc/apt/sources.list.d/nodesource.list
+RUN apt-get update && apt-get -qy install nodejs
+
+RUN echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 
 RUN mkdir /var/run/sshd
 RUN chmod 0755 /var/run/sshd
@@ -15,14 +25,14 @@ RUN echo "pairbox ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/pairbox \
 
 USER pairbox
 
-RUN mkdir -p /home/pairbox/.ssh/ /home/pairbox/.vim/autoload/ /home/pairbox/src/
+RUN mkdir -p /home/pairbox/.ssh/ /home/pairbox/.vim/autoload/ /home/pairbox/src/ /home/pairbox/.i3/
 
 RUN for user in mebubo uuzaix; do \
         curl -s https://api.github.com/users/$user/keys | jq -r .[].key >> /home/pairbox/.ssh/authorized_keys;\
      done
 
 RUN cd /home/pairbox/src/ && git clone https://github.com/mebubo/dotfiles
-RUN cd /home/pairbox/ && for f in .vimrc .bashrc .inputrc .tmux.conf .vim/autoload/plug.vim; do \
+RUN cd /home/pairbox/ && for f in .vimrc .bashrc .inputrc .tmux.conf .vim/autoload/plug.vim .environment .i3/config; do \
                              ln -sf /home/pairbox/src/dotfiles/$f $f; \
                          done
 
