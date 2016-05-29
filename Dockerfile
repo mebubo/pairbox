@@ -5,8 +5,8 @@ RUN echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/50pairbox
 RUN apt-get update
 RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
         jq curl git sudo openssh-client ghc emacs-nox less moreutils locales aptitude \
-        apt-transport-https build-essential htop \
-        xfonts-base vnc4server i3 chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu
+        apt-transport-https build-essential htop unzip file wget tree ncdu \
+        xfonts-base vnc4server tightvncserver i3 chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo 'deb https://deb.nodesource.com/node_6.x sid main' > /etc/apt/sources.list.d/nodesource.list
