@@ -24,6 +24,8 @@ RUN /usr/sbin/useradd --create-home --shell /bin/bash --uid 1000 pairbox
 RUN echo "pairbox ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/pairbox \
     && chmod 0440 /etc/sudoers.d/pairbox
 
+COPY start-xvnc.sh /usr/local/bin/
+
 USER pairbox
 
 RUN mkdir -p /home/pairbox/.ssh/ /home/pairbox/.vim/autoload/ /home/pairbox/src/ /home/pairbox/.i3/
