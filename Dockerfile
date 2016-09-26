@@ -13,7 +13,7 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo 'deb https://deb.nodesource.com/node_6.x sid main' > /etc/apt/sources.list.d/nodesource.list
 RUN apt-get update && apt-get -qy install nodejs
 
-RUN echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
+RUN echo -e 'en_US.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 
 RUN mkdir /var/run/sshd
 RUN chmod 0755 /var/run/sshd
