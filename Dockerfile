@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
         jq curl git sudo openssh-client ghc emacs-nox less moreutils locales aptitude \
         apt-transport-https build-essential htop unzip file wget tree ncdu rsync \
-        libgconf-2-4 libnotify4 \
+        libgconf-2-4 libnotify4 gnupg \
         xfonts-base vnc4server tightvncserver i3 chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
