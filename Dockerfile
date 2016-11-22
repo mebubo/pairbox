@@ -52,7 +52,7 @@ RUN cd /home/pairbox/ && \
 
 RUN npm install -g yarn
 
-RUN sed -i 's/Mod4/Mod1/' .i3/config
+RUN sed -i 's/Mod4/Mod1/' /home/pairbox/.i3/config
 
 USER root
 
