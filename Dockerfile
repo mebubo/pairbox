@@ -28,7 +28,7 @@ RUN echo "pairbox ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/pairbox \
 
 COPY start-xvnc.sh /usr/local/bin/
 
-RUN curl -o /tmp/code.tar.gz https://vscode-update.azurewebsites.net/latest/linux-x64/stable && dpkg -i /tmp/code.tar.gz
+RUN curl -o /tmp/vscode.deb https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable && dpkg -i /tmp/vscode.deb
 
 USER pairbox
 
