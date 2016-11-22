@@ -9,7 +9,7 @@ RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
         libgconf-2-4 libnotify4 gnupg libx11-dev libxft-dev \
         xfonts-base vnc4server tightvncserver tigervnc-standalone-server i3 i3status \
         chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu \
-        silversearcher-ag
+        silversearcher-ag haskell-stack
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo 'deb https://deb.nodesource.com/node_7.x sid main' > /etc/apt/sources.list.d/nodesource.list
