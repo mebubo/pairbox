@@ -12,7 +12,7 @@ RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
         silversearcher-ag
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-RUN echo 'deb https://deb.nodesource.com/node_6.x sid main' > /etc/apt/sources.list.d/nodesource.list
+RUN echo 'deb https://deb.nodesource.com/node_7.x sid main' > /etc/apt/sources.list.d/nodesource.list
 RUN apt-get update && apt-get -qy install nodejs
 
 RUN echo -e 'en_US.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
