@@ -7,7 +7,9 @@ RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
         jq curl git sudo openssh-client ghc emacs-nox less moreutils locales aptitude \
         apt-transport-https build-essential htop unzip file wget tree ncdu rsync \
         libgconf-2-4 libnotify4 gnupg libx11-dev libxft-dev \
-        xfonts-base vnc4server tightvncserver i3 i3status chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu
+        xfonts-base vnc4server tightvncserver tigervnc-standalone-server i3 i3status \
+        chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu \
+        silversearcher-ag
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo 'deb https://deb.nodesource.com/node_6.x sid main' > /etc/apt/sources.list.d/nodesource.list
@@ -25,6 +27,8 @@ RUN echo "pairbox ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/pairbox \
     && chmod 0440 /etc/sudoers.d/pairbox
 
 COPY start-xvnc.sh /usr/local/bin/
+
+RUN curl -o /tmp/code.tar.gz https://vscode-update.azurewebsites.net/latest/linux-x64/stable && dpkg -i /tmp/code.tar.gz
 
 USER pairbox
 
