@@ -19,7 +19,8 @@ RUN curl -s https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list
 RUN apt-get update && apt-get -qy install google-chrome-stable
 
-RUN echo -e 'en_US.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
+RUN echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
+    echo 'fr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 
 RUN mkdir /var/run/sshd
 RUN chmod 0755 /var/run/sshd
