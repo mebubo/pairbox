@@ -13,3 +13,7 @@ ssh config:
 vnc viewer:
 
     vncviewer localhost:1
+
+Copy the volume to HOST:
+
+    docker run --rm -v pairbox-home:/from debian:unstable tar -C /from -cz . | ssh HOST docker run --rm -i -v pairbox-home:/to debian:unstable tar -C /to -xzv
