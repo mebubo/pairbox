@@ -1,6 +1,7 @@
 ---
 - hosts: docker-host
   tasks:
+    - file: path=/var/log/auth.log state=touch
     - apt: upgrade=dist update_cache=yes
     - with_items:
         - git
