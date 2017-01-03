@@ -15,6 +15,10 @@ RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo 'deb https://deb.nodesource.com/node_7.x sid main' > /etc/apt/sources.list.d/nodesource.list
 RUN apt-get update && apt-get -qy install nodejs
 
+RUN curl -s https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' > /etc/apt/sources.list.d/google-chrome.list
+RUN apt-get update && apt-get -qy install google-chrome-stable
+
 RUN echo -e 'en_US.UTF-8 UTF-8\nfr_FR.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen
 
 RUN mkdir /var/run/sshd
