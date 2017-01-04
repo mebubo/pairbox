@@ -7,3 +7,6 @@ run:
 kill:
 	-docker kill pairbox
 	-docker rm pairbox
+
+host:
+	ansible-playbook -i docker-host, docker-host.yml

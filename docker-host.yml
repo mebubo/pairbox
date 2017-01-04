@@ -8,6 +8,7 @@
         - docker.io
         - docker-compose
         - fail2ban
+        - ufw
       apt: name={{ item }} state=present install_recommends=no
     - with_items:
         - { key: "PasswordAuthentication", value: "no" }
