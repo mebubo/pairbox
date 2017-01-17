@@ -1,15 +1,30 @@
 ---
 - hosts: docker-host
   tasks:
-    - file: path=/var/log/auth.log state=touch
     - apt: upgrade=dist update_cache=yes
     - with_items:
         - git
-        - docker.io
-        - docker-compose
         - fail2ban
         - ufw
+        - apt-transport-https
+        - ca-certificates
       apt: name={{ item }} state=present install_recommends=no
+    - file:
+        path: /etc/systemd/system/docker.service.d
+        state: directory
+    - copy:
+        src: docker-systemd-override.conf
+        dest: /etc/systemd/system/docker.service.d/docker-systemd-override.conf
+    - apt_key:
+        keyserver: hkp://ha.pool.sks-keyservers.net:80
+        id: 58118E89F3A912897C070ADBF76221572C52609D
+    - apt_repository:
+        repo: deb https://apt.dockerproject.org/repo ubuntu-xenial main
+        update_cache: yes
+    - with_items:
+        - docker-engine
+        - docker-compose
+      apt: name={{ item }} state=present
     - with_items:
         - { key: "PasswordAuthentication", value: "no" }
         - { key: "ChallengeResponseAuthentication", value: "no" }
