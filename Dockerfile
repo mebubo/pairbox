@@ -7,7 +7,7 @@ RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
         jq curl git sudo openssh-client ghc emacs-nox less moreutils locales aptitude \
         apt-transport-https build-essential htop unzip file wget tree ncdu rsync \
         libgconf-2-4 libnotify4 gnupg libx11-dev libxft-dev \
-        xfonts-base vnc4server tightvncserver tigervnc-standalone-server i3 i3status \
+        xfonts-base vnc4server tigervnc-standalone-server tigervnc-common i3 i3status \
         chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu \
         silversearcher-ag haskell-stack diffstat
 
