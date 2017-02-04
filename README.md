@@ -17,7 +17,7 @@ ssh config:
 
 vnc viewer:
 
-    vncviewer --RemoteResize=0 --DesktopSize=1900x1000 localhost:1
+    vncviewer --RemoteResize=0 --DesktopSize=1900x1000 --DotWhenNoCursor=1 --Shared=1 localhost:1
 
 Copy the volume to HOST:
 
