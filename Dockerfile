@@ -56,6 +56,7 @@ RUN cd /home/pairbox/ && \
                         done
 
 RUN npm install -g yarn purescript bower pulp
+RUN cargo install ripgrep
 
 USER root
 
