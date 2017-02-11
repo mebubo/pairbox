@@ -7,6 +7,10 @@ Start clients:
     DISPLAY=:1 i3
     DISPLAY=:1 vncconfig -nowin
 
+Both server and clients (needs config files in ~/.vnc):
+
+    tigervncserver -fg :1
+
 ssh config:
 
     Host pairbox

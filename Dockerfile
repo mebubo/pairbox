@@ -38,7 +38,7 @@ RUN curl -L -o /tmp/vscode.deb https://vscode-update.azurewebsites.net/latest/li
 
 USER pairbox
 
-RUN mkdir -p /home/pairbox/.ssh/ /home/pairbox/.vim/autoload/ /home/pairbox/src/ /home/pairbox/.i3/
+RUN mkdir -p /home/pairbox/.ssh/ /home/pairbox/.vim/autoload/ /home/pairbox/src/ /home/pairbox/.i3/ /home/pairbox/.vnc/
 
 RUN for user in mebubo uuzaix; do \
         curl -s https://api.github.com/users/$user/keys | jq -r .[].key >> /home/pairbox/.ssh/authorized_keys;\
@@ -50,7 +50,7 @@ RUN cd /home/pairbox/src/st && make && sudo make install
 RUN cd /home/pairbox/src/ && git clone https://github.com/mebubo/dotfiles
 RUN cd /home/pairbox/ && \
         for f in .vimrc .bashrc .inputrc .tmux.conf .vim/autoload/plug.vim .environment \
-                .i3/config .npmrc; \
+                .i3/config .npmrc .vnc/vnc.conf .vnc/Xvnc-session; \
                         do \
                                 ln -sf /home/pairbox/src/dotfiles/$f $f; \
                         done
