@@ -3,13 +3,55 @@ FROM debian:unstable
 RUN echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/50pairbox
 
 RUN apt-get update
-RUN apt-get -qy install tmux vim ipython openssh-server ca-certificates \
-        jq curl git sudo openssh-client ghc emacs-nox less moreutils locales aptitude \
-        apt-transport-https build-essential htop unzip file wget tree ncdu rsync \
-        libgconf-2-4 libnotify4 gnupg libx11-dev libxft-dev \
-        xfonts-base vnc4server tigervnc-standalone-server tigervnc-common i3 i3status \
-        chromium firefox xfce4-terminal rofi suckless-tools fonts-dejavu \
-        silversearcher-ag haskell-stack diffstat man cargo zip
+RUN apt-get -qy install \
+        apt-transport-https \
+        aptitude \
+        build-essential \
+        ca-certificates \
+        cargo \
+        chromium \
+        curl \
+        diffstat \
+        emacs-nox \
+        file \
+        firefox \
+        fonts-dejavu \
+        ghc \
+        git \
+        gnupg \
+        haskell-stack \
+        htop \
+        i3 \
+        i3status \
+        ipython \
+        jq \
+        less \
+        libgconf-2-4 \
+        libnotify4 \
+        libx11-dev \
+        libxft-dev \
+        locales \
+        man \
+        moreutils \
+        ncdu \
+        openssh-client \
+        openssh-server \
+        rofi \
+        rsync \
+        silversearcher-ag \
+        suckless-tools \
+        sudo \
+        tigervnc-common \
+        tigervnc-standalone-server \
+        tmux \
+        tree \
+        unzip \
+        vim \
+        vnc4server \
+        wget \
+        xfce4-terminal \
+        xfonts-base \
+        zip
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 RUN echo 'deb https://deb.nodesource.com/node_7.x sid main' > /etc/apt/sources.list.d/nodesource.list
