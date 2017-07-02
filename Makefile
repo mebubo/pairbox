@@ -8,7 +8,7 @@ run:
 		mebubo/pairbox
 
 run-local:
-	docker run --name pairbox -d \
+	docker run --name pairbox -d --shm-size=256m \
 		-p 127.0.0.1:4444:22 \
 		-p 127.0.0.1:2000-2010:2000-2010 \
 		-v pairbox-home:/home/pairbox \
