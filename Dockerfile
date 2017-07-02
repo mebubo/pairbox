@@ -43,6 +43,7 @@ RUN apt-get -qy install \
         openssh-server \
         rsync \
         silversearcher-ag \
+        sqlite3 \
         sudo \
         tmux \
         tree \
@@ -50,6 +51,7 @@ RUN apt-get -qy install \
         vim \
         wget \
         xfonts-base \
+        youtube-dl \
         zip
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
