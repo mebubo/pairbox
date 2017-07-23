@@ -55,7 +55,7 @@ RUN apt-get -qy install \
         zip
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-RUN echo 'deb https://deb.nodesource.com/node_7.x sid main' > /etc/apt/sources.list.d/nodesource.list
+RUN echo 'deb https://deb.nodesource.com/node_8.x sid main' > /etc/apt/sources.list.d/nodesource.list
 RUN apt-get update && apt-get -qy install nodejs
 
 RUN curl -s https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
