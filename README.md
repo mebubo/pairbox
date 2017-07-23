@@ -2,6 +2,11 @@ Start Xvnc:
 
     Xtigervnc -localhost -geometry 1920x1080 -SecurityTypes None :1
 
+or:
+
+    vncpasswd
+    Xtigervnc -localhost -geometry 1920x1080 :0 -PasswordFile .vnc/passwd
+
 Start clients:
 
     DISPLAY=:1 i3
@@ -22,6 +27,10 @@ ssh config:
 vnc viewer:
 
     vncviewer --RemoteResize=0 --DesktopSize=1900x1000 --DotWhenNoCursor=1 --Shared=1 localhost:1
+
+on a mac:
+
+    open vnc://localhost:5901
 
 Copy the volume to HOST:
 
