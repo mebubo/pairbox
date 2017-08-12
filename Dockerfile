@@ -24,10 +24,13 @@ RUN apt-get update \
         less \
         libcurl4-gnutls-dev \
         libgconf-2-4 \
+        libgl1-mesa-dri \
+        libgl1-mesa-glx \
         libgmp-dev \
         libgtk2.0-0 \
         libnotify4 \
         libnss3 \
+        libsecret-1-0 \
         libtinfo-dev \
         libx11-dev \
         libx11-xcb1 \
@@ -37,6 +40,7 @@ RUN apt-get update \
         libxtst6 \
         locales \
         man \
+        mesa-utils \
         moreutils \
         ncdu \
         openssh-client \
@@ -50,6 +54,7 @@ RUN apt-get update \
         unzip \
         vim \
         wget \
+        xauth \
         xfonts-base \
         youtube-dl \
         zip
@@ -69,7 +74,8 @@ RUN mkdir /var/run/sshd
 RUN chmod 0755 /var/run/sshd
 RUN sed -i '/PasswordAuthentication/d' /etc/ssh/sshd_config && echo "PasswordAuthentication no" >> /etc/ssh/sshd_config
 
-RUN /usr/sbin/useradd --create-home --shell /bin/bash --uid 1000 pairbox
+RUN /usr/sbin/groupadd --gid 91 dri
+RUN /usr/sbin/useradd --create-home --shell /bin/bash --uid 1000 pairbox --groups 91
 
 RUN echo "pairbox ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/pairbox \
     && chmod 0440 /etc/sudoers.d/pairbox
