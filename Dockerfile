@@ -2,9 +2,9 @@ FROM debian:unstable
 
 RUN echo 'APT::Install-Recommends "false";' > /etc/apt/apt.conf.d/50pairbox
 
-RUN apt-get update
-RUN apt-get -qy upgrade
-RUN apt-get -qy install \
+RUN apt-get update \
+    && apt-get -qy upgrade \
+    && apt-get -qy install \
         apt-file \
         apt-transport-https \
         aptitude \
