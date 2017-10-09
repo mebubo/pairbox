@@ -1,6 +1,9 @@
 build:
 	docker build -t pairbox .
 
+rebuild:
+	docker build --no-cache -t pairbox .
+
 run:
 	docker run --name pairbox -d --shm-size=256m \
 		-p 4444:22 -p 2000-2010:2000-2010 \
