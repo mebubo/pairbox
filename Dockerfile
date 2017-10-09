@@ -18,6 +18,7 @@ RUN apt-get update \
         fonts-dejavu \
         git \
         gnupg \
+        gradle \
         htop \
         ipython \
         jq \
@@ -30,10 +31,12 @@ RUN apt-get update \
         libgtk2.0-0 \
         libnotify4 \
         libnss3 \
+        libsdl2-2.0-0 \
         libsecret-1-0 \
         libtinfo-dev \
         libx11-dev \
         libx11-xcb1 \
+        libxrandr-dev \
         libxft-dev \
         libxkbfile1 \
         libxss1 \
