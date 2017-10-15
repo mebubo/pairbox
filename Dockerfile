@@ -27,11 +27,13 @@ RUN apt-get update \
         libgconf-2-4 \
         libgl1-mesa-dri \
         libgl1-mesa-glx \
+        libgl-dev \
         libgmp-dev \
         libgtk2.0-0 \
         libnotify4 \
         libnss3 \
         libsdl2-2.0-0 \
+        libsdl2-dev \
         libsecret-1-0 \
         libtinfo-dev \
         libx11-dev \
