@@ -25,6 +25,7 @@ RUN apt-get update \
         less \
         libcurl4-gnutls-dev \
         libgconf-2-4 \
+        libiw-dev \
         libgl1-mesa-dri \
         libgl1-mesa-glx \
         libgl-dev \
