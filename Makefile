@@ -17,6 +17,7 @@ run-local:
 		-v pairbox-home:/home/pairbox \
 		-v /home/meb/src:/home/pairbox/src \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-v /home/meb/.local-pairbox:/home/pairbox/.local \
 		--device /dev/dri \
 		pairbox
 
