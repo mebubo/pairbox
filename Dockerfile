@@ -82,7 +82,7 @@ RUN sed -i '/PasswordAuthentication/d' /etc/ssh/sshd_config && echo "PasswordAut
 RUN /usr/sbin/groupadd --gid 91 dri
 RUN /usr/sbin/useradd --create-home --shell /bin/bash --uid 1000 pairbox --groups 91
 
-RUN echo "pairbox ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/pairbox \
+RUN echo "pairbox ALL=(ALL) ALL" > /etc/sudoers.d/pairbox \
     && chmod 0440 /etc/sudoers.d/pairbox
 
 RUN curl -L -o /tmp/vscode.deb https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable && \
