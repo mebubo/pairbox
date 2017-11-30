@@ -16,6 +16,7 @@ RUN apt-get update \
         exuberant-ctags \
         file \
         fonts-dejavu \
+        freeglut3-dev \
         git \
         gnupg \
         gradle \
@@ -49,6 +50,7 @@ RUN apt-get update \
         mesa-utils \
         moreutils \
         ncdu \
+        neovim \
         openssh-client \
         openssh-server \
         rsync \
@@ -63,6 +65,7 @@ RUN apt-get update \
         xauth \
         xfonts-base \
         youtube-dl \
+        z3 \
         zip
 
 RUN curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
