@@ -54,6 +54,7 @@ RUN apt-get update \
         openssh-client \
         openssh-server \
         rsync \
+        sbt \
         silversearcher-ag \
         sqlite3 \
         sudo \
