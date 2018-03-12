@@ -10,6 +10,7 @@ RUN apt-get update \
         aptitude \
         build-essential \
         ca-certificates \
+        calibre \
         curl \
         diffstat \
         emacs-nox \
@@ -26,12 +27,13 @@ RUN apt-get update \
         less \
         libcurl4-gnutls-dev \
         libgconf-2-4 \
-        libiw-dev \
+        libgl-dev \
         libgl1-mesa-dri \
         libgl1-mesa-glx \
-        libgl-dev \
         libgmp-dev \
         libgtk2.0-0 \
+        libiw-dev \
+        libncurses5-dev \
         libnotify4 \
         libnss3 \
         libsdl2-2.0-0 \
@@ -40,9 +42,9 @@ RUN apt-get update \
         libtinfo-dev \
         libx11-dev \
         libx11-xcb1 \
-        libxrandr-dev \
         libxft-dev \
         libxkbfile1 \
+        libxrandr-dev \
         libxss1 \
         libxtst6 \
         locales \
@@ -51,8 +53,10 @@ RUN apt-get update \
         moreutils \
         ncdu \
         neovim \
+        openjdk-8-jdk \
         openssh-client \
         openssh-server \
+        p7zip \
         rsync \
         sbt \
         silversearcher-ag \
@@ -65,6 +69,7 @@ RUN apt-get update \
         wget \
         xauth \
         xfonts-base \
+        xsltproc \
         youtube-dl \
         z3 \
         zip
