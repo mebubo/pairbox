@@ -104,7 +104,7 @@ COPY --chown=pairbox:pairbox authorized_keys /home/pairbox/.ssh/authorized_keys
 
 RUN cd /home/pairbox/ && \
         for f in .vimrc .bashrc .inputrc .tmux.conf .vim/autoload/plug.vim .environment \
-                 .npmrc .gitconfig; \
+                 .npmrc .gitconfig .codex .ctags .ideavimrc; \
                         do \
                                 ln -sf /home/pairbox/src/dotfiles/$f $f; \
                         done
