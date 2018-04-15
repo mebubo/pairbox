@@ -53,6 +53,7 @@ RUN apt-get update \
         moreutils \
         ncdu \
         neovim \
+        netcat \
         openjdk-8-jdk \
         openssh-client \
         openssh-server \
@@ -60,6 +61,7 @@ RUN apt-get update \
         rsync \
         silversearcher-ag \
         sqlite3 \
+        socat \
         sudo \
         tmux \
         tree \
