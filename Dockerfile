@@ -102,9 +102,6 @@ RUN cd /home/pairbox/ && \
                                 ln -sf /home/pairbox/src/dotfiles/$f $f; \
                         done
 
-RUN npm install -g yarn purescript bower pulp
-RUN cargo install ripgrep
-
 USER root
 
 EXPOSE 22
