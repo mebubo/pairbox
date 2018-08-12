@@ -29,6 +29,7 @@ RUN apt-get -qy install \
         less \
         libgconf-2-4 \
         libnotify4 \
+        libsecret-1-0 \
         libx11-dev \
         libxft-dev \
         locales \
