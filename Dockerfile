@@ -80,7 +80,7 @@ COPY start-xvnc.sh /usr/local/bin/
 RUN curl -L -o /tmp/vscode.deb https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable && \
         dpkg -i /tmp/vscode.deb
 
-RUN curl -L -o /tmp/stack.tar.gz https://www.stackage.org/stack/linux-x86_64-static && \
+RUN curl -L -o /tmp/stack.tar.gz https://get.haskellstack.org/stable/linux-x86_64.tar.gz && \
         tar -C /usr/local/bin/ --strip-components=1 --wildcards -xf /tmp/stack.tar.gz stack*/stack
 
 USER pairbox
