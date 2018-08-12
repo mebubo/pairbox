@@ -95,7 +95,7 @@ RUN echo "pairbox ALL=(ALL) ALL" > /etc/sudoers.d/pairbox \
 RUN curl -L -o /tmp/vscode.deb https://vscode-update.azurewebsites.net/latest/linux-deb-x64/stable && \
         dpkg -i /tmp/vscode.deb
 
-RUN curl -L -o /tmp/stack.tar.gz https://www.stackage.org/stack/linux-x86_64-static && \
+RUN curl -L -o /tmp/stack.tar.gz https://github.com/commercialhaskell/stack/releases/download/v1.7.1/stack-1.7.1-linux-x86_64.tar.gz && \
         tar -C /usr/local/bin/ --strip-components=1 --wildcards -xf /tmp/stack.tar.gz stack*/stack
 
 USER pairbox
